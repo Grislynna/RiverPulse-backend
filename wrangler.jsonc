@@ -6,13 +6,12 @@
 	"observability": {
 		"enabled": true
 	},
-	"bindings": [
-    		{
-			"type": "d1",
-			"name": "backend-database-binding",
-			"database_name": "river-data"
-		}
-	],
+	"d1_databases": [
+    {
+      "binding": "backend-database-binding",
+      "database_name": "river-data"
+    }
+  ],
 	"triggers": {
 		"crons": [
 			"*/15 * * * *"
