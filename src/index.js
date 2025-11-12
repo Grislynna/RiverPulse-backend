@@ -2,18 +2,33 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // Handle OPTIONS preflight requests first
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        headers: {
+          "Access-Control-Allow-Origin": "https://grislynna.github.io",
+          "Access-Control-Allow-Methods": "GET, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      });
+    }
+
     if (url.pathname === "/data") {
       const { results } = await env["backend-database-binding"].prepare(
         "SELECT timestamp, water_level, flow, latest_update FROM water_data ORDER BY timestamp DESC LIMIT 100"
       ).all();
 
       return new Response(JSON.stringify(results), {
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "https://grislynna.github.io",
+        },
       });
     }
 
     return new Response("Worker is running");
   },
+
 
   async scheduled(event, env, ctx) {
     const url = "https://www.vkr.se/SlaHist/sla.htm"; // Real data source
