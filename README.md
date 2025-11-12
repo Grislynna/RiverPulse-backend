@@ -1,2 +1,2 @@
 # RiverPulse-backend
-For cloudfare. Bbackend for the RiverPulse frontend
+For cloudfare. Backend for the RiverPulse frontend
