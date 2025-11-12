@@ -1,15 +1,13 @@
 {
-  "name": "riverpulse",
-  "version": "1.0.0",
-  "description": "",
-  "main": "linegraph.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install-python-deps": "pip install -r requirements.txt",
-    "run-python": "python3 backend.py",
-    "build": "echo Hello World"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "autumn-snowflake-4e88",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev --test-scheduled",
+		"start": "wrangler dev --test-scheduled"
+	},
+	"devDependencies": {
+		"wrangler": "^4.47.0"
+	}
 }
