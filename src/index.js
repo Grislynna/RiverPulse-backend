@@ -52,7 +52,7 @@ export default {
       const timestamp = new Date().toISOString();
 
       // Insert data into D1
-      await env.DB.prepare(
+      await env["backend-database-binding"].prepare(
         "INSERT INTO water_data (timestamp, water_level, flow, latest_update) VALUES (?, ?, ?, ?)"
       )
         .bind(timestamp, water_level, flow, latest_update)
@@ -64,4 +64,3 @@ export default {
     }
   },
 };
-
