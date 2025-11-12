@@ -16,8 +16,8 @@ export default {
   },
 
   async scheduled(event, env, ctx) {
-    //const url = "https://www.vkr.se/SlaHist/sla.htm";
-    const url = "https://grislynna.github.io/RiverPulse/dummy.html"
+    const url = "https://www.vkr.se/SlaHist/sla.htm"; // Real data source
+    //const url = "https://grislynna.github.io/RiverPulse/dummy.html" // For testing with dummy data
 
     try {
       const response = await fetch(url);
