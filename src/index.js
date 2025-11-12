@@ -61,6 +61,7 @@ export default {
 
       if (water_level === null || flow === null || latest_update === null) {
         console.error("Failed to parse some data:", { water_level, flow, latest_update });
+        console.log(`Fetched HTML (length ${html.length}):`, html);
         return;
       }
 
