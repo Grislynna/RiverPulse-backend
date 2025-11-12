@@ -40,7 +40,8 @@ export default {
 
       // Extract water level after specific <td>
       const waterLevelMatch = html.match(
-        /VattennivÃ¥ nedstrÃ¶ms kraftverket, m.Ã¶.h\.<\/td>\s*<td[^>]*>([\d,\.]+)<\/td>/
+        // /VattennivÃ¥ nedstrÃ¶ms kraftverket, m.Ã¶.h\.<\/td>\s*<td[^>]*>([\d,\.]+)<\/td>/ // Old encoding
+        /Vattennivå nedströms kraftverket, m.ö.h\.<\/td>\s*<td[^>]*>([\d,\.]+)<\/td>/
       );
       const water_level = waterLevelMatch
         ? parseFloat(waterLevelMatch[1].replace(",", "."))
