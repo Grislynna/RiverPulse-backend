@@ -1,6 +1,6 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "autumn-snowflake-4e88",
+	"name": "river-pulse-data-fetcher",
 	"main": "src/index.js",
 	"compatibility_date": "2025-11-11",
 	"observability": {
