@@ -1,0 +1,25 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "autumn-snowflake-4e88",
+	"main": "src/index.js",
+	"compatibility_date": "2025-11-11",
+	"observability": {
+		"enabled": true
+	},
+	"bindings": [
+    		{
+			"type": "d1",
+			"name": "backend-database-binding",
+			"database_name": "river-data"
+		}
+	],
+	"triggers": {
+		"crons": [
+			"*/15 * * * *"
+		]
+	}
+}
