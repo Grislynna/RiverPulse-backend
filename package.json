@@ -1,0 +1,15 @@
+{
+  "name": "riverpulse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "linegraph.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-python-deps": "pip install -r requirements.txt",
+    "run-python": "python3 backend.py",
+    "build": "echo Hello World"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
