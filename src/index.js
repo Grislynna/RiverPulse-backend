@@ -15,8 +15,9 @@ export default {
 
     if (url.pathname === "/data") {
       const { results } = await env["backend-database-binding"].prepare(
-        "SELECT timestamp, water_level, flow, latest_update FROM water_data ORDER BY timestamp DESC LIMIT 100"
+        "SELECT timestamp, water_level, flow, latest_update FROM water_data ORDER BY timestamp ASC"
       ).all();
+
 
       return new Response(JSON.stringify(results), {
         headers: {
