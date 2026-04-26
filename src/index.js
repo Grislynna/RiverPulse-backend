@@ -41,18 +41,20 @@ export default {
 
       // Extract water level after specific <td>
       const waterLevelMatch = html.match(
-				/Vattennivå nedströms kraftverket, m.ö.h\.<\/td>\s*<td[^>]*>(-?[\d,.]+)<\/td>/
+        /Vattennivå nedströms kraftverket, m.ö.h\.<\/td>\s*<td[^>]*>(-?[\d,.]+)<\/td>/
       );
       const water_level = waterLevelMatch
         ? parseFloat(waterLevelMatch[1].replace(",", "."))
         : null;
 
-      // Extract flow (second td with class)
-      const flowMatches = [...html.matchAll(/<td class="tblborder pad w60 right bottom">([\d,\.]+)<\/td>/g)];
-      const flow =
-        flowMatches.length > 1
-          ? parseFloat(flowMatches[1][1].replace(",", "."))
-          : null;
+      // Extract flow (based on label instead of position)
+      const flowMatch = html.match(
+        /Flöde, m<sup>3<\/sup>\/s<\/td>\s*<td[^>]*>([\d,.]+)<\/td>/
+      );
+
+      const flow = flowMatch
+        ? parseFloat(flowMatch[1].replace(",", "."))
+        : null;
 
       // Extract latest_update from <p class="gray">
       const latestUpdateMatch = html.match(/<p class="gray">([^<]+)<\/p>/);
